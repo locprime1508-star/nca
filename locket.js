@@ -88,39 +88,32 @@ if (ua.includes("Locket")) {
     });
 
     // ============================================================
-    // 3. CAMERA, VIDEO, FILTERS & UPLOAD QUALITY
+    //// ============================================================
+    // 3. CAMERA, VIDEO, FILTERS & UPLOAD QUALITY (60 GIÂY)
     // ============================================================
+    var MY_VIDEO_DURATION = 60.0;
+    var cameraConfig = {
+        gold_max_duration: MY_VIDEO_DURATION,
+        goldMaxDuration: MY_VIDEO_DURATION,
+        max_duration: MY_VIDEO_DURATION,
+        maxDuration: MY_VIDEO_DURATION,
+        ultra_wide: true,
+        ultraWide: true,
+        volume_button: true,
+        volumeButton: true,
+        flash_button: true,
+        telephoto: true,
+        srgb: true,
+        lanczos: true,
+        quality_mbps: 1.5,
+        qualityMbps: 1.5
+    };
+
+    obj.entries.camera = JSON.stringify(cameraConfig);
+    obj.entries.camera_roll = JSON.stringify(cameraConfig);
+
+    var durationStr = MY_VIDEO_DURATION.toString();
     Object.assign(obj.entries, {
-        camera: JSON.stringify({
-            gold_max_duration: 30.0,
-            goldMaxDuration: 30.0,
-            max_duration: 30.0,
-            maxDuration: 30.0,
-            ultra_wide: true,
-            ultraWide: true,
-            volume_button: true,
-            volumeButton: true,
-            flash_button: true,
-            telephoto: true,
-            srgb: true,
-            lanczos: true,
-            quality_mbps: 0.9,
-            qualityMbps: 0.9
-        }),
-        camera_roll: JSON.stringify({
-            gold_max_duration: 30.0,
-            goldMaxDuration: 30.0,
-            video_max_duration: 30.0,
-            videoMaxDuration: 30.0,
-            max_duration: 30.0,
-            maxDuration: 30.0,
-            trim_max_duration: 30.0,
-            trimMaxDuration: 30.0,
-            camera_roll_max_duration: 30.0,
-            quality_mbps: 0.9,
-            qualityMbps: 0.9,
-            flash_button: true
-        }),
         live_photos: JSON.stringify({
             capture: true,
             viewing: true,
@@ -155,16 +148,16 @@ if (ua.includes("Locket")) {
         camera_roll_video_upload_enabled: "true",
         internal_camera_roll_video_upload_enabled: "true",
         longer_camera_roll_videos_enabled: "true",
-        camera_roll_video_max_duration: "30.0",
-        camera_roll_max_duration: "30.0",
-        camera_roll_duration: "30.0",
-        max_video_duration: "30.0",
-        video_max_duration: "30.0",
-        video_trim_max_duration: "30.0",
-        trim_max_duration: "30.0",
-        gold_max_duration: "30.0",
-        goldMaxDuration: "30.0",
-        video_quality_mbps: "0.9",
+        camera_roll_video_max_duration: durationStr,
+        camera_roll_max_duration: durationStr,
+        camera_roll_duration: durationStr,
+        max_video_duration: durationStr,
+        video_max_duration: durationStr,
+        video_trim_max_duration: durationStr,
+        trim_max_duration: durationStr,
+        gold_max_duration: durationStr,
+        goldMaxDuration: durationStr,
+        video_quality_mbps: "1.5",
         video_sound_enabled: "true",
         microphone_enabled: "true",
         camera_microphone_enabled: "true",
@@ -176,7 +169,6 @@ if (ua.includes("Locket")) {
         upload_thumbnail_image_quality: "1.0",
         upload_thumbnail_image_size: "1020"
     });
-
     // ============================================================
     // 4. BẠN BÈ, GIỚI HẠN & ĐỀ XUẤT KẾT BẠN
     // ============================================================
@@ -282,8 +274,8 @@ if (ua.includes("Locket")) {
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
             uid: "midautumn_2026",
-            // url: "https://i.ibb.co/1Yt1Dzzy/Shin-chan-1.png",
-            url: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
+           
+  
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
@@ -566,15 +558,15 @@ if (ua.includes("Locket")) {
                 ]
             },
             {
-                section: "🎨 Decorative by Duy Vinh",
+                section: "🎨 nca",
                 items: [
                     {
-                        overlay_id: "caption:duyvinh09",
+                        overlay_id: "caption:nca",
                         source: "remote",
                         caption: {
                             background: { colors: ["#B8E7FF", "#A8F5D0", "#DCCBFF"] },
                             max_lines: 1,
-                            text: "💻 duyvinh09",
+                            text: " nguyencongan",
                             text_color: "#183153",
                             type: "static_content"
                         }
