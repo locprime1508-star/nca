@@ -57,7 +57,7 @@ if (ua.includes("Locket")) {
                 
                 }
             ],
-            primary_button_title: "Xong",
+            primary_button_title: "done",
             campaign: "locket_gold_welcome_v3",
             start_at: "2020-01-01T00:00:00",
             end_at: "2099-12-31T23:59:59",
@@ -504,17 +504,6 @@ if (ua.includes("Locket")) {
             {
                 section: "🎨 Decorative by Locket",
                 items: [
-                    {
-                        overlay_id: "caption:toi_nho_em",
-                        source: "remote",
-                        caption: {
-                            background: { colors: ["#FFFFFF", "#6D9EEB"] },
-                            max_lines: 1,
-                            text: "보고 싶어 🥺",
-                            text_color: "#000000E6",
-                            type: "static_content"
-                        }
-                    },
                     {
                         overlay_id: "caption:party_time",
                         source: "remote",
