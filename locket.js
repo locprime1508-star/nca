@@ -1,6 +1,7 @@
 // ============================================================
 // Locket Remote Config Rewrite
 // Dùng cho: Loon / Quantumult X / Surge / Shadowrocket
+// cre: DINH DUY VINH 09
 // ============================================================
 
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
@@ -49,7 +50,7 @@ if (ua.includes("Locket")) {
             tag: "LOCKET GOLD",
             tag_gradient: true,
             tag_style: "gold_gradient",
-            title: " bạn đang chạy config 45s của nca ",
+            title: " bạn đang chạy config 45s ",
             feature_set: [
                 {
                     title: "✨✨✨✨✨",
