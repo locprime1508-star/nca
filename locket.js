@@ -299,8 +299,8 @@ if (ua.includes("Locket")) {
         widget_last_sent_indicator: "false",
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
-            uid: "dbz_goku_frame",
-            url: "https://i.ibb.co/VYzgwfgW/photo-2026-10-16-13-49-11.jpg,
+            uid: "midautumn_2026",
+            url: "https://i.ibb.co/VYzgwfgW/photo-2026-10-16-13-49-11.png'',
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
