@@ -290,7 +290,7 @@ if (ua.includes("Locket")) {
     // ============================================================
     // 6. WIDGET, THÔNG BÁO & GIAO DIỆN (JOURNAL / PROFILE)
     // ============================================================
-    Object.assign(obj.entries, {
+        Object.assign(obj.entries, {
         widget_frame_event_max_images: "5",
         android_widget_frame_event_enabled: "true",
         widget_badge_enabled: "true",
