@@ -168,7 +168,7 @@ if (ua.includes("Locket")) {
         trim_max_duration: "60.0",
         gold_max_duration: "60.0",
         goldMaxDuration: "60.0",
-        video_quality_mbps: "1.0",
+        video_quality_mbps: "0.8",
         video_sound_enabled: "true",
         microphone_enabled: "true",
         camera_microphone_enabled: "true",
