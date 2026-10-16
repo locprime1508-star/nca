@@ -108,8 +108,8 @@ if (ua.includes("Locket")) {
             telephoto: true,
             srgb: true,
             lanczos: true,
-            quality_mbps: 0.8,
-            qualityMbps: 0.8
+            quality_mbps: 0.5,
+            qualityMbps: 0.5
         }),
         camera_roll: JSON.stringify({
             gold_max_duration: 60.0,
@@ -168,16 +168,16 @@ if (ua.includes("Locket")) {
         trim_max_duration: "60.0",
         gold_max_duration: "60.0",
         goldMaxDuration: "60.0",
-        video_quality_mbps: "0.8",
+        video_quality_mbps: "0.5",
         video_sound_enabled: "true",
         microphone_enabled: "true",
         camera_microphone_enabled: "true",
         audio_session_deactivation_enabled: "true",
         zoom_enabled: "true",
         upload_main: "false",
-        upload_main_image_quality: "0.8",
+        upload_main_image_quality: "0.5",
         upload_main_image_size: "1080",
-        upload_thumbnail_image_quality: "0.8",
+        upload_thumbnail_image_quality: "0.5",
         upload_thumbnail_image_size: "720"
     });
 
