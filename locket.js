@@ -94,37 +94,49 @@ if (ua.includes("Locket")) {
     // ============================================================
     // 3. CAMERA, VIDEO, FILTERS & UPLOAD QUALITY
     // ============================================================
+    var MY_VIDEO_DURATION = 45.0;
+    
+    var cameraConfig = {
+        gold_max_duration: MY_VIDEO_DURATION,
+        goldMaxDuration: MY_VIDEO_DURATION,
+        max_duration: MY_VIDEO_DURATION,
+        maxDuration: MY_VIDEO_DURATION,
+        ultra_wide: true,
+        ultraWide: true,
+        volume_button: true,
+        volumeButton: true,
+        flash_button: true,
+        telephoto: true,
+        srgb: true,
+        lanczos: true,
+        quality_mbps: 1.2,
+        qualityMbps: 1.2
+    };
+
+    var cameraRollConfig = {
+        gold_max_duration: MY_VIDEO_DURATION,
+        goldMaxDuration: MY_VIDEO_DURATION,
+        video_max_duration: MY_VIDEO_DURATION,
+        videoMaxDuration: MY_VIDEO_DURATION,
+        max_duration: MY_VIDEO_DURATION,
+        maxDuration: MY_VIDEO_DURATION,
+        trim_max_duration: MY_VIDEO_DURATION,
+        trimMaxDuration: MY_VIDEO_DURATION,
+        camera_roll_max_duration: MY_VIDEO_DURATION,
+        camera_roll_video_max_duration: MY_VIDEO_DURATION,
+        max_file_size: 104857600,       // Cho phép file tối đa 100MB từ thư viện
+        max_upload_bytes: 104857600,   // Nới lỏng giới hạn dung lượng tải lên
+        max_size_bytes: 104857600,
+        quality_mbps: 1.2,
+        qualityMbps: 1.2,
+        flash_button: true
+    };
+
+    obj.entries.camera = JSON.stringify(cameraConfig);
+    obj.entries.camera_roll = JSON.stringify(cameraRollConfig);
+
+    var durationStr = MY_VIDEO_DURATION.toString();
     Object.assign(obj.entries, {
-        camera: JSON.stringify({
-            gold_max_duration: 60.0,
-            goldMaxDuration: 60.0,
-            max_duration: 60.0,
-            maxDuration: 60.0,
-            ultra_wide: true,
-            ultraWide: true,
-            volume_button: true,
-            volumeButton: true,
-            flash_button: true,
-            telephoto: true,
-            srgb: true,
-            lanczos: true,
-            quality_mbps: 0.8,
-            qualityMbps: 0.8
-        }),
-        camera_roll: JSON.stringify({
-            gold_max_duration: 60.0,
-            goldMaxDuration: 60.0,
-            video_max_duration: 60.0,
-            videoMaxDuration: 60.0,
-            max_duration: 60.0,
-            maxDuration: 60.0,
-            trim_max_duration: 60.0,
-            trimMaxDuration: 60.0,
-            camera_roll_max_duration: 60.0,
-            quality_mbps: 0.8,
-            qualityMbps: 0.8,
-            flash_button: true
-        }),
         live_photos: JSON.stringify({
             capture: true,
             viewing: true,
@@ -159,26 +171,28 @@ if (ua.includes("Locket")) {
         camera_roll_video_upload_enabled: "true",
         internal_camera_roll_video_upload_enabled: "true",
         longer_camera_roll_videos_enabled: "true",
-        camera_roll_video_max_duration: "60.0",
-        camera_roll_max_duration: "60.0",
-        camera_roll_duration: "60.0",
-        max_video_duration: "60.0",
-        video_max_duration: "60.0",
-        video_trim_max_duration: "60.0",
-        trim_max_duration: "60.0",
-        gold_max_duration: "60.0",
-        goldMaxDuration: "60.0",
-        video_quality_mbps: "0.3",
+        camera_roll_video_max_duration: durationStr,
+        camera_roll_max_duration: durationStr,
+        camera_roll_duration: durationStr,
+        max_video_duration: durationStr,
+        video_max_duration: durationStr,
+        video_trim_max_duration: durationStr,
+        trim_max_duration: durationStr,
+        gold_max_duration: durationStr,
+        goldMaxDuration: durationStr,
+        max_file_size: "104857600",
+        max_upload_bytes: "104857600",
+        video_quality_mbps: "1.2",
         video_sound_enabled: "true",
         microphone_enabled: "true",
         camera_microphone_enabled: "true",
         audio_session_deactivation_enabled: "true",
         zoom_enabled: "true",
         upload_main: "false",
-        upload_main_image_quality: "0.8",
-        upload_main_image_size: "1080",
-        upload_thumbnail_image_quality: "0.8",
-        upload_thumbnail_image_size: "720"
+        upload_main_image_quality: "1.0",
+        upload_main_image_size: "1440",
+        upload_thumbnail_image_quality: "1.0",
+        upload_thumbnail_image_size: "1020"
     });
 
     // ============================================================
