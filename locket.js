@@ -291,20 +291,38 @@ if (ua.includes("Locket")) {
     // 6. WIDGET, THÔNG BÁO & GIAO DIỆN (JOURNAL / PROFILE)
     // ============================================================
     Object.assign(obj.entries, {
-        widget_frame_event_max_images: "5",
+        widget_frame_event_max_images: "10",
         android_widget_frame_event_enabled: "true",
         widget_badge_enabled: "true",
         widget_badge_v2: "true",
         widget_stale_state_enabled: "false",
         widget_last_sent_indicator: "false",
         widget_sync_token_reload_mode: "clearTokenNever",
+        
+        // Cấu hình sự kiện khung widget tự động theo thời gian thực / ngày lễ
         widget_frame_event: JSON.stringify({
-            uid: "midautumn_2026",
+            uid: "dynamic_holiday_event",
+            title: "Special Event Frames",
             use_local_time_zone: true,
-            placement: "below",
+            placement: "overlay",
             start_at: "2020-01-01T00:00:00",
-            end_at: "2099-12-31T23:59:59"
+            end_at: "2099-12-31T23:59:59",
+            active_events: [
+                { id: "midautumn", name: "Trung Thu", theme: "lantern" },
+                { id: "halloween", name: "Halloween", theme: "spooky" },
+                { id: "christmas", name: "Giáng Sinh", theme: "festive" },
+                { id: "lunar_new_year", name: "Tết Nguyên Đán", theme: "gold_lucky" }
+            ]
         }),
+
+        // Ép server mở khóa các gói khung theo mùa
+        seasonal_frames_config: JSON.stringify({
+            enabled: true,
+            auto_rotate: true,
+            override_default: true,
+            current_season_theme: "dynamic_server_override"
+        }),
+
         live_activity_onboarding: "true",
         live_activity_onboarding_variant: "friending",
         register_live_activity_push_to_start_token: "true",
@@ -315,6 +333,7 @@ if (ua.includes("Locket")) {
         prompt_notification_permissions_after_friending: "true",
         activity_bar_enabled: "true",
         journal_activity_bar_enabled: "true",
+        
         journal_settings: JSON.stringify({
             debug_menu_enabled: false,
             focus_animation: true,
@@ -327,6 +346,7 @@ if (ua.includes("Locket")) {
             streak_visualization_minimum_count: 2,
             overlay_indicators: { location: true, music: true, static_content: true, weather: true }
         }),
+        
         qr_code_config: JSON.stringify({ profile_enabled: true, scanning_enabled: true }),
         custom_profile_pics: "true",
         profile_menu_v2_enabled: "true"
