@@ -1,6 +1,5 @@
 // ============================================================
 // Locket Remote Config Rewrite
-// Endpoint: firebaseremoteconfig.googleapis.com
 // Dùng cho: Loon / Quantumult X / Surge / Shadowrocket
 // ============================================================
 
@@ -50,12 +49,12 @@ if (ua.includes("Locket")) {
             tag: "LOCKET GOLD",
             tag_gradient: true,
             tag_style: "gold_gradient",
-            title: "chúc mừng bạn nhé",
+            title: "chúc mừng bạn ",
             feature_set: [
                 {
-                    title: " ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨",
-                    body: "  💛💛💛💛💛💛💛💛💛💛💛💛💛💛💛",
-                    
+                    title: "✨✨✨✨✨",
+                    body: "💛💛💛💛💛💛💛💛💛💛",
+                
                 }
             ],
             primary_button_title: "Xong",
@@ -63,7 +62,12 @@ if (ua.includes("Locket")) {
             start_at: "2020-01-01T00:00:00",
             end_at: "2099-12-31T23:59:59",
             use_local_time_zone: true
-    
+        }),
+        android_subscribe_gold_button_enabled: "false",
+        profile_badge_visible: "true",
+        lunar_new_year_app_icon_enabled: "true",
+        settings_instagram_url: "he he",
+        settings_tiktok_url: "hi hi"
     });
 
     // ============================================================
@@ -88,32 +92,39 @@ if (ua.includes("Locket")) {
     });
 
     // ============================================================
-    //// ============================================================
-    // 3. CAMERA, VIDEO, FILTERS & UPLOAD QUALITY (60 GIÂY)
+    // 3. CAMERA, VIDEO, FILTERS & UPLOAD QUALITY
     // ============================================================
-    var MY_VIDEO_DURATION = 60.0;
-    var cameraConfig = {
-        gold_max_duration: MY_VIDEO_DURATION,
-        goldMaxDuration: MY_VIDEO_DURATION,
-        max_duration: MY_VIDEO_DURATION,
-        maxDuration: MY_VIDEO_DURATION,
-        ultra_wide: true,
-        ultraWide: true,
-        volume_button: true,
-        volumeButton: true,
-        flash_button: true,
-        telephoto: true,
-        srgb: true,
-        lanczos: true,
-        quality_mbps: 1.5,
-        qualityMbps: 1.5
-    };
-
-    obj.entries.camera = JSON.stringify(cameraConfig);
-    obj.entries.camera_roll = JSON.stringify(cameraConfig);
-
-    var durationStr = MY_VIDEO_DURATION.toString();
     Object.assign(obj.entries, {
+        camera: JSON.stringify({
+            gold_max_duration: 60.0,
+            goldMaxDuration: 60.0,
+            max_duration: 60.0,
+            maxDuration: 60.0,
+            ultra_wide: true,
+            ultraWide: true,
+            volume_button: true,
+            volumeButton: true,
+            flash_button: true,
+            telephoto: true,
+            srgb: true,
+            lanczos: true,
+            quality_mbps: 1.0,
+            qualityMbps: 1.0
+        }),
+        camera_roll: JSON.stringify({
+            gold_max_duration: 60.0,
+            goldMaxDuration: 60.0,
+            video_max_duration: 60.0,
+            videoMaxDuration: 60.0,
+            max_duration: 60.0,
+            maxDuration: 60.0,
+            trim_max_duration: 60.0,
+            trimMaxDuration: 60.0,
+            camera_roll_max_duration: 60.0,
+            quality_mbps: 1.0,
+            qualityMbps: 1.0,
+            flash_button: true
+        }),
         live_photos: JSON.stringify({
             capture: true,
             viewing: true,
@@ -148,16 +159,16 @@ if (ua.includes("Locket")) {
         camera_roll_video_upload_enabled: "true",
         internal_camera_roll_video_upload_enabled: "true",
         longer_camera_roll_videos_enabled: "true",
-        camera_roll_video_max_duration: durationStr,
-        camera_roll_max_duration: durationStr,
-        camera_roll_duration: durationStr,
-        max_video_duration: durationStr,
-        video_max_duration: durationStr,
-        video_trim_max_duration: durationStr,
-        trim_max_duration: durationStr,
-        gold_max_duration: durationStr,
-        goldMaxDuration: durationStr,
-        video_quality_mbps: "1.5",
+        camera_roll_video_max_duration: "60.0",
+        camera_roll_max_duration: "60.0",
+        camera_roll_duration: "60.0",
+        max_video_duration: "60.0",
+        video_max_duration: "60.0",
+        video_trim_max_duration: "60.0",
+        trim_max_duration: "60.0",
+        gold_max_duration: "60.0",
+        goldMaxDuration: "60.0",
+        video_quality_mbps: "1.0",
         video_sound_enabled: "true",
         microphone_enabled: "true",
         camera_microphone_enabled: "true",
@@ -169,6 +180,7 @@ if (ua.includes("Locket")) {
         upload_thumbnail_image_quality: "1.0",
         upload_thumbnail_image_size: "1020"
     });
+
     // ============================================================
     // 4. BẠN BÈ, GIỚI HẠN & ĐỀ XUẤT KẾT BẠN
     // ============================================================
@@ -274,8 +286,6 @@ if (ua.includes("Locket")) {
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
             uid: "midautumn_2026",
-           
-  
             use_local_time_zone: true,
             placement: "below",
             start_at: "2020-01-01T00:00:00",
@@ -558,7 +568,7 @@ if (ua.includes("Locket")) {
                 ]
             },
             {
-                section: "🎨 nca",
+                section: "🎨🎨🎨🎨🎨🎨",
                 items: [
                     {
                         overlay_id: "caption:nca",
@@ -566,7 +576,7 @@ if (ua.includes("Locket")) {
                         caption: {
                             background: { colors: ["#B8E7FF", "#A8F5D0", "#DCCBFF"] },
                             max_lines: 1,
-                            text: " nguyencongan",
+                            text: "nguyencongan",
                             text_color: "#183153",
                             type: "static_content"
                         }
