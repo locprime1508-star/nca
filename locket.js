@@ -351,49 +351,87 @@ if (ua.includes("Locket")) {
         custom_profile_pics: "true",
         profile_menu_v2_enabled: "true"
     });
-
+    
     // ============================================================
     // 7. HỆ THỐNG, CACHE & STORAGE CDN
     // ============================================================
-    Object.assign(obj.entries, {
-        cdn_domain_replacements: JSON.stringify({
-            "firebasestorage.googleapis.com": "cdn.locketcamera.com"
-        }),
-        cdn_domain_replacements_video: "true",
-        storage_bucket: "gs://locket-img",
-        storage_bucket_video: "gs://locket-video",
-        image_cache_max_age_sec: "157680000",
-        image_cache_max_size: "400000000",
-        history_cache_age_days: "1000",
-        user_cache_max_age_sec: "691200",
-        friends_cache_max_age_sec: "2592000",
-        image_fetch_cache: "true",
-        image_cache_use_shared: "true",
-        use_doc_dir_for_image_cache: "true",
-        efficient_history_cache_invalidation: "true",
-        timestamp_based_history_fetches: "true",
-        get_latest_moment_v2: "true",
-        fetch_users_from_cloud_function: "true",
-        refresh_interval: "60",
-        firestore_refresh_v2: "true",
-        firestore_refresh_v3: "true",
-        keychain_access_retries: "true",
-        blocked_users_cached_sync_enabled: "true",
-        beta_features_enabled: "true",
-        join_testflight_enabled: "true",
-        safety_center: "true",
-        help_center: "true",
-        support_v2: "true",
-        privacy_choices_setting: "true",
-        request_att_permission: "true",
-        invite_link_preview_variant: "4",
-        share_history_config: JSON.stringify({ prompt_enabled: false, fetching_enabled: true }),
-        share_history_prompt_enabled: "false",
-        use_thumbnails_for_sharing: "true",
-        use_thumbnails_in_timeline: "true",
-        persist_onboarding_step: "true",
-        onboarding_contact_permission_step: "true"
-    });
+   Object.assign(obj.entries, {
+        widget_frame_event_max_images: "10",
+        android_widget_frame_event_enabled: "true",
+        widget_badge_enabled: "true",
+        widget_badge_v2: "true",
+        widget_stale_state_enabled: "false",
+        widget_last_sent_indicator: "false",
+        widget_sync_token_reload_mode: "clearTokenNever",
+        
+        // Kích hoạt tính năng Custom Widget Frame trong Locket Gold
+        custom_widget_frames: "enabled",
+        custom_widget_frames_enabled: "true",
+        
+        // Cấu hình kho khung tĩnh VIP Gold tùy chỉnh
+        widget_frames_config: JSON.stringify({
+            enabled: true,
+            allow_custom_frames: true,
+            unlock_all_styles: true,
+            default_style: "royal_gold_vip",
+            styles: [
+                {
+                    id: "royal_gold_vip",
+                    name: "👑 VIP Royal Gold",
+                    border_style: "ornate_gold",
+                    crown_badge: true,
+                    badge_text: "VIP",
+                    corner_radius: 28.0,
+                    glow_effect: true,
+                    glow_color: "#FFD700",
+                    overlay_asset: "royal_crown_frame"
+                }
+            ]
+        }),
+
+        // Danh sách ID khung đè vào menu chọn widget
+        widget_frame_styles: JSON.stringify([
+            "royal_gold_vip",
+            "gold_luxury",
+            "classic"
+        ]),
+
+        // Cấu hình sự kiện / Seasonal Frames đè
+        seasonal_frames_config: JSON.stringify({
+            enabled: true,
+            auto_rotate: false,
+            override_default: true,
+            current_season_theme: "royal_gold_vip"
+        }),
+
+        live_activity_onboarding: "true",
+        live_activity_onboarding_variant: "friending",
+        register_live_activity_push_to_start_token: "true",
+        live_activity_remove_stale_start_token: "true",
+        notification_preferences_live_activities: "true",
+        notification_preferences: "true",
+        notification_reply_body_visible: "true",
+        prompt_notification_permissions_after_friending: "true",
+        activity_bar_enabled: "true",
+        journal_activity_bar_enabled: "true",
+        
+        journal_settings: JSON.stringify({
+            debug_menu_enabled: false,
+            focus_animation: true,
+            compact_header: true,
+            friends_button: true,
+            reverse_scroll_direction: false,
+            streak_visualization: true,
+            streak_visualization_style: "gradient",
+            streak_header_minimum_count: 0,
+            streak_visualization_minimum_count: 2,
+            overlay_indicators: { location: true, music: true, static_content: true, weather: true }
+        }),
+        
+        qr_code_config: JSON.stringify({ profile_enabled: true, scanning_enabled: true }),
+        custom_profile_pics: "true",
+        profile_menu_v2_enabled: "true"
+    });
 
     // ============================================================
     // 8. OVERLAY & CUSTOM CAPTIONS
