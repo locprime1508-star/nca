@@ -1,5 +1,5 @@
 // ============================================================
-// Locket Remote Config Full & Custom ( Nguyen Cong An )
+// Locket Remote Config Full & Custom Fix (Nguyen Cong An)
 // ============================================================
 
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
@@ -76,28 +76,12 @@ if (ua.includes("Locket")) {
         camera_roll_video_upload_enabled: "true"
     });
 
-    // 4. HỆ THỐNG CAPTION ĐẦY ĐỦ (Gốc + Tùy biến cá nhân)
+    // 4. BẬT HỆ THỐNG CAPTION
     obj.entries.captions_enabled = "true";
     obj.entries.overlay_navigator_enabled = "true";
 
-    obj.entries.overlay_items = JSON.stringify([
-        {
-            section: "✨ Caption Tự Sáng Tác",
-            items: [
-                {
-                    overlay_id: "caption:custom_1",
-                    source: "remote",
-                    caption: {
-                        background: { colors: ["#FF7E5F", "#FEB47B"] },
-                        icon: { data: "🚀", type: "emoji" },
-                        max_lines: 1,
-                        text: "Nội dung caption riêng của bạn", // <--- Thay chữ tùy ý vào đây
-                        text_color: "#FFFFFF",
-                        type: "static_content"
-                    }
-                }
-            ]
-        },
+    // Danh sách các caption tùy chỉnh thêm vào
+    var customSections = [
         {
             section: "nca",
             items: [
@@ -225,8 +209,24 @@ if (ua.includes("Locket")) {
                     }
                 }
             ]
-        },
-        {
+        }
+    ];
+
+    // Xử lý giữ nguyên overlay gốc của Locket để không bị mất chức năng đăng riêng tư
+    if (obj.entries.overlay_items) {
+        try {
+            var nativeItems = JSON.parse(obj.entries.overlay_items);
+            if (Array.isArray(nativeItems)) {
+                obj.entries.overlay_items = JSON.stringify(customSections.concat(nativeItems));
+            } else {
+                obj.entries.overlay_items = JSON.stringify(customSections);
+            }
+        } catch (e) {
+            obj.entries.overlay_items = JSON.stringify(customSections);
+        }
+    } else {
+        // Dự phòng danh sách mặc định nếu không nhận được dữ liệu gốc
+        customSections.push({
             section: "Mặc định",
             items: [
                 { overlay_id: "caption:standard", source: "local", caption: { type: "standard" } },
@@ -235,8 +235,9 @@ if (ua.includes("Locket")) {
                 { overlay_id: "caption:weather", source: "local", caption: { type: "weather" } },
                 { overlay_id: "caption:time", source: "local", caption: { type: "time" } }
             ]
-        }
-    ]);
+        });
+        obj.entries.overlay_items = JSON.stringify(customSections);
+    }
 }
 
 $done({ body: JSON.stringify(obj) });
