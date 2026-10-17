@@ -28,7 +28,14 @@ if (ua.includes("Locket")) {
             remove_ads: "enabled",
             video: "enabled",
             custom_widget_frames: "enabled",
-            streak_recovery: "enabled"
+            streak_recovery: "enabled",
+            // Bổ sung các cờ mở khóa AI và bộ lọc nâng cao
+            ai_filters: "enabled",
+            ai_filters_enabled: "enabled",
+            generative_ai: "enabled",
+            generative_ai_enabled: "enabled",
+            ai_avatar: "enabled",
+            custom_filters: "enabled"
         }),
         upsell_features: JSON.stringify({
             app_icon_picker: true,
@@ -36,7 +43,9 @@ if (ua.includes("Locket")) {
             camera_theme: true,
             locket_views: true,
             remove_ads: true,
-            custom_widget_frames: true
+            custom_widget_frames: true,
+            ai_filters: true,
+            generative_ai: true
         }),
         paywall_presentation_config: JSON.stringify({
             uid: "paywall_testflight",
@@ -47,16 +56,15 @@ if (ua.includes("Locket")) {
             profile_banner: true
         }),
         feature_discovery_popup_config: JSON.stringify({
-            tag: "LOCKET GOLD",
+            tag: "LOCKET GOLD AI",
             tag_gradient: true,
             tag_style: "gold_gradient",
-            title: " bạn đang chạy config 45s ",
+            title: " Đã kích hoạt AI & 45s ",
             feature_set: [
                 {
-                    title: "🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍",
-                    body: "💛💛💛💛💛💛💛💛💛💛",
+                    title: "✨ AI Filters & Effects Active ✨",
+                    body: "💛 Tính năng tạo ảnh AI và bộ lọc đã sẵn sàng",
                     imageURL: "https://i.ibb.co/xkJMqKn/photo-2026-10-16-15-31-19.png"
-                
                 }
             ],
             primary_button_title: "done",
