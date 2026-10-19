@@ -50,16 +50,16 @@ if (ua.includes("Locket")) {
             tag: "LOCKET GOLD",
             tag_gradient: true,
             tag_style: "gold_gradient",
-            title: " bạn đang chạy config 45s ",
+            title: " Welcome to Locket Gold 45s ",
             feature_set: [
                 {
-                    title: "🤍🤍🤍🤍🤍🤍🤍🤍🤍🤍",
+                    title: "☄️☄️DRAGONBALL VERSION BY ALEX1508☄️☄️  ",
                     body: "💛💛💛💛💛💛💛💛💛💛",
-                    imageURL: "https://i.ibb.co/xkJMqKn/photo-2026-10-16-15-31-19.png"
+                    imageURL: "https://i.ibb.co/fYFwKwJT/046ab4505319df6a213f47cdf74abaae.jpg"
                 
                 }
             ],
-            primary_button_title: "done",
+            primary_button_title: "Done",
             campaign: "locket_gold_welcome_v3",
             start_at: "2020-01-01T00:00:00",
             end_at: "2099-12-31T23:59:59",
