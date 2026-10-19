@@ -1,5 +1,5 @@
 /***********************************************
-> Locket RevenueCat Subscriptions by nguyencongan
+> Locket RevenueCat Subscriptions by Alex1508
 ***********************************************/
 
 // ========= ID ========= //
@@ -19,7 +19,7 @@ var ua = $request.headers["User-Agent"] || $request.headers["user-agent"],
 if (obj && obj.subscriber) {
     obj.Attention = "Chúc mừng bạn! Vui lòng không bán hoặc chia sẻ cho người khác!";
     
-    var nguyencongan = {
+    var Alex1508 = {
         auto_resume_date: null,
         display_name: "locket_1600_1y",
         is_sandbox: true,
@@ -50,9 +50,9 @@ if (obj && obj.subscriber) {
     const match = Object.keys(mapping).find(e => ua.includes(e));
     if (match) {
         let [e, s] = mapping[match];
-        s ? (locketGold.product_identifier = s, obj.subscriber.subscriptions[s] = nguyencongan) : obj.subscriber.subscriptions["locket_1600_1y"] = nguyencongan, obj.subscriber.entitlements[e] = locketGold;
+        s ? (locketGold.product_identifier = s, obj.subscriber.subscriptions[s] = Alex1508) : obj.subscriber.subscriptions["locket_1600_1y"] = Alex1508, obj.subscriber.entitlements[e] = locketGold;
     } else {
-        obj.subscriber.subscriptions["locket_1600_1y"] = nguyencongan;
+        obj.subscriber.subscriptions["locket_1600_1y"] = Alex1508;
         obj.subscriber.entitlements.pro = locketGold;
     }
 }
