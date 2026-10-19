@@ -53,7 +53,7 @@ if (ua.includes("Locket")) {
             title: " Welcome to Locket Gold 45s ",
             feature_set: [
                 {
-                    title: "☄️☄️DRAGONBALL VERSION BY ALEX1508☄️☄️  ",
+                    title: "☄️☄️ LOCKET GOLD by ALEX1508☄️☄️  ",
                     body: "💛💛💛💛💛💛💛💛💛💛",
                     imageURL: "https://i.ibb.co/fYFwKwJT/046ab4505319df6a213f47cdf74abaae.jpg"
                 
