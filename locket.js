@@ -53,7 +53,7 @@ if (ua.includes("Locket")) {
             title: " Chúc Bạn Sử Dụng Vui Vẻ ",
             feature_set: [
                 {
-                    title: "🌠🌠 LOCKET GOLD by ALEX1508🌠🌠  ",
+                    title: "🌠LOCKET GOLD by ALEX1508🌠",
                     body: "💛💛💛💛💛💛💛💛💛💛",
                     imageURL: "https://i.ibb.co/fYFwKwJT/046ab4505319df6a213f47cdf74abaae.jpg"
                 
